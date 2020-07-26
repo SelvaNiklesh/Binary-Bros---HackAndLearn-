@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title></title>
+	<script src="http://localhost:3000/assets/modules/channel-web/inject.js"></script>
+	</head>
+<body>
+
+<script>
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  async function reloadUntil(){
+	if(!window.botpressWebChat){
+		await sleep(5000)
+		window.location.reload()
+	}
+  }
+  reloadUntil();
+  window.botpressWebChat.init({
+	host: 'http://localhost:3000', 
+	botId: 'sophia'
+  })
+</script>
+
+</body>
+</html>
